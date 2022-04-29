@@ -1,0 +1,42 @@
+@import 'reset';
+@import 'variaveis';
+
+body {
+    font-family: $fonte;
+    font-size: 28px;
+    color: $verde-neon;
+    background-color: $azul-escuro;
+}
+
+.caixa-conselhos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    background-color: $az-acinzentado;
+    position: absolute;
+    width:auto;
+    max-width: 900px;
+    padding: 30px 50px;
+    border-radius: 10px;
+    box-shadow: 0.2px 0.2px 2px 5px $az-acinzentado-escuro;
+}
+
+img {
+    width:1.5rem;
+    height:1.5rem;
+}
+
+.btn-gera-conselho {
+    background-color: $verde-neon;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+    bottom: -30px;
+    height: 4rem;
+    width: 4rem;
+}
