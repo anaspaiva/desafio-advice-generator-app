@@ -2,41 +2,97 @@
 @import 'variaveis';
 
 body {
-    font-family: $fonte;
-    font-size: 28px;
-    color: $verde-neon;
     background-color: $azul-escuro;
-}
-
-.caixa-conselhos {
+    min-height: 100Vh;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:center;
-    background-color: $az-acinzentado;
-    position: absolute;
-    width:auto;
+    justify-content: center;
+}
+
+.caixa-conselhos {
+    background-color: $az-acinzentado-escuro;
+    font-family: $fonte;
+    font-size: 28px;
+    color: $ciano-claro ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-width: 300px;
     max-width: 900px;
     padding: 30px 50px;
     border-radius: 10px;
-    box-shadow: 0.2px 0.2px 2px 5px $az-acinzentado-escuro;
-}
-
-img {
-    width:1.5rem;
-    height:1.5rem;
+    box-shadow: 0 0 1em rgb(35, 33, 43);
+    .num-conselho{
+        display: flex;
+        color: $verde-neon;
+        letter-spacing: 4px;
+        font-size: 10px;
+        text-transform: uppercase;
+        justify-content: center;
+    }
+    .texto {
+        word-break: break-word;
+        max-width: 400px;
+        margin: 20px 0;
+    }
+    .divisao-desk {
+        padding: 10px 0;
+        margin-bottom: -40px; 
+    }
+    .divisao-mobile {
+        display: none;
+    }
 }
 
 .btn-gera-conselho {
+    background-image: url(../../assets/icon-dice.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
     background-color: $verde-neon;
     border-radius: 50%;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     cursor: pointer;
-    z-index: 2;
-    bottom: -30px;
-    height: 4rem;
-    width: 4rem;
+    bottom: -55px;
+    height: 3rem;
+    width: 3rem;
+    &:hover{ 
+        transform: scale(1.01);
+        transition: 0.9ms;
+        box-shadow: 0 0 2rem $verde-neon;
+    }
+}
+
+// Mobile 
+
+@media (max-width: 768px) {
+
+    .caixa-conselhos { 
+        min-width: 100px;
+        max-width: 250px;
+    }
+
+    .divisao-desk {
+        display: none;
+    }
+
+    .divisao-mobile {
+        display: inline !important;
+        padding: 10px 0;
+        margin-bottom: -40px;
+    }
+
+    .btn-gera-conselho:hover {
+        transform: none;
+        transition: none; 
+        box-shadow: none;
+    }
 }

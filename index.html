@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   <link rel="stylesheet" href="./css/scss/style.css">
   
   <title>Frontend Mentor | Advice generator app</title>
@@ -17,12 +17,17 @@
 <body>
   <main>
     <div class="caixa-conselhos" id="caixa-conselhos">
-      <p id="numero-conselho"> Advice #<span id="id-conselho">
-      </span></p>
+      
+      <p class="num-conselho">Advice #<span type="number" id="id-conselho"></span></p>
+
 
       <span class="texto" id="texto"></span>
-
+      
+      <img class="divisao-desk" src="./assets/pattern-divider-desktop.svg">
+      <img class="divisao-mobile" src="./assets/pattern-divider-mobile.svg">
+      
       <button type="button" class="btn-gera-conselho" img="./assets/icon-dice.svg" alt="Clique para gerar um novo conselho"></button>
+
     </div>
   </main>
 </body>

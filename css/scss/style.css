@@ -31,7 +31,8 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-  line-height: 1;
+  margin: 0;
+  padding: 0;
 }
 
 ol, ul {
@@ -61,13 +62,9 @@ textarea:focus, input:focus, select:focus {
 }
 
 body {
-  font-family: "Manrope", sans-serif;
-  font-size: 28px;
-  color: #52ffa8;
   background-color: #1f2632;
-}
-
-.caixa-conselhos {
+  min-height: 100Vh;
+  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,24 +78,71 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #4e5d73;
-  position: absolute;
-  width: auto;
+}
+
+.caixa-conselhos {
+  background-color: #323a49;
+  font-family: "Manrope", sans-serif;
+  font-size: 28px;
+  color: #cee3e9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  min-width: 300px;
   max-width: 900px;
   padding: 30px 50px;
   border-radius: 10px;
-  -webkit-box-shadow: 0.2px 0.2px 2px 5px #323a49;
-          box-shadow: 0.2px 0.2px 2px 5px #323a49;
+  -webkit-box-shadow: 0 0 1em #23212b;
+          box-shadow: 0 0 1em #23212b;
 }
 
-img {
-  width: 1.5rem;
-  height: 1.5rem;
+.caixa-conselhos .num-conselho {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #52ffa8;
+  letter-spacing: 4px;
+  font-size: 10px;
+  text-transform: uppercase;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.caixa-conselhos .texto {
+  word-break: break-word;
+  max-width: 400px;
+  margin: 20px 0;
+}
+
+.caixa-conselhos .divisao-desk {
+  padding: 10px 0;
+  margin-bottom: -40px;
+}
+
+.caixa-conselhos .divisao-mobile {
+  display: none;
 }
 
 .btn-gera-conselho {
+  background-image: url(../../assets/icon-dice.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
   background-color: #52ffa8;
   border-radius: 50%;
+  border: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -110,9 +154,40 @@ img {
           align-items: center;
   position: relative;
   cursor: pointer;
-  z-index: 2;
-  bottom: -30px;
-  height: 4rem;
-  width: 4rem;
+  bottom: -55px;
+  height: 3rem;
+  width: 3rem;
+}
+
+.btn-gera-conselho:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-transition: 0.9ms;
+  transition: 0.9ms;
+  -webkit-box-shadow: 0 0 2rem #52ffa8;
+          box-shadow: 0 0 2rem #52ffa8;
+}
+
+@media (max-width: 768px) {
+  .caixa-conselhos {
+    min-width: 100px;
+    max-width: 250px;
+  }
+  .divisao-desk {
+    display: none;
+  }
+  .divisao-mobile {
+    display: inline !important;
+    padding: 10px 0;
+    margin-bottom: -40px;
+  }
+  .btn-gera-conselho:hover {
+    -webkit-transform: none;
+            transform: none;
+    -webkit-transition: none;
+    transition: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
