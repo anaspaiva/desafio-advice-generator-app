@@ -8,14 +8,14 @@ function geraConselho (){
     
     .then (resposta => {
         return resposta.json();
+    }) 
+    .then (data => {
+        const numero = data.slip;
+        numConselho.textContent = `${numero.id}`
+        const txt = data.slip;
+        texto.textContent = `"${txt.advice}"`
     })
-    .then(data => {
-        /*numConselho.textContent = `${numConselho.slip}`
-        console.log(numConselho)*/
-        const textoConselho = data.slip;
-        texto.textContent = `"${textoConselho.advice}"`
-    }
-)};
+}
 
 geraNovoConselho.addEventListener("click", () => {
     geraConselho();
