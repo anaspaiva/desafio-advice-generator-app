@@ -80,7 +80,7 @@ body {
           justify-content: center;
 }
 
-.caixa-conselhos {
+#caixa-conselhos {
   background-color: #323a49;
   font-family: "Manrope", sans-serif;
   font-size: 28px;
@@ -107,7 +107,7 @@ body {
           box-shadow: 0 0 1em #23212b;
 }
 
-.caixa-conselhos .num-conselho {
+#caixa-conselhos .num-conselho {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -120,18 +120,18 @@ body {
           justify-content: center;
 }
 
-.caixa-conselhos .texto {
+#caixa-conselhos #texto {
   word-break: break-word;
   max-width: 400px;
   margin: 20px 0;
 }
 
-.caixa-conselhos .divisao-desk {
+#caixa-conselhos .divisao-desk {
   padding: 10px 0;
   margin-bottom: -40px;
 }
 
-.caixa-conselhos .divisao-mobile {
+#caixa-conselhos .divisao-mobile {
   display: none;
 }
 
@@ -169,7 +169,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .caixa-conselhos {
+  #caixa-conselhos {
     min-width: 100px;
     max-width: 250px;
   }

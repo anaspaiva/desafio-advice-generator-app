@@ -1,36 +1,37 @@
-const numConselho = document.querySelector ('#id-conselho');
-const texto = document.querySelector ('#texto');
-const geraNovoConselho = document.querySelector ('.btn-gera-conselho');
+const numConselho = document.querySelector('#id-conselho');
+const texto = document.querySelector('#texto');
+const btnGeraNovoConselho = document.querySelector('.btn-gera-conselho');
 
 alert("Bem vindo! Clique no botão verde para gerar seu conselho diário!");
 
 
-async function geraConselho (){
-document.querySelector ('.btn-gera-conselho').disabled = true
-    try {  
-        setTimeout(function() {
-            document.querySelector ('.btn-gera-conselho').disabled = false
-            }, 2000);
-            console.log(setTimeout);
+async function geraConselho() {
+    btnGeraNovoConselho.disabled = true;
+    try {
+        const habilitaBotao = setTimeout(function () {
+            btnGeraNovoConselho.disabled = false;
+        }, 2000);
+        console.log(habilitaBotao);
 
-        const data = await fetch (`https://api.adviceslip.com/advice`)
-        .then (resposta => {
+        const data = await fetch(`https://api.adviceslip.com/advice`) // fetch já faz o GET e retorna uma promise
+            .then(resposta => {
                 return resposta.json();
-        })
-            if (data){
-                const numero = data.slip;
-                numConselho.textContent = `${numero.id}`
-                const txt = data.slip;
-                texto.textContent = `"${txt.advice}"`
-            }
+            })
+        if (data) {
+            const num = data.slip;
+            numConselho.textContent = `${num.id}`; //inicializando o objeto id (numero)
+            const txt = data.slip;
+            texto.textContent = `"${txt.advice}"`;
         }
-    catch (err){
+
+    }
+    catch (err) { //capturando o erro 
         alert("Não foi possível gerar um novo conselho!");
-        console.log(err)
+        console.log(err);
     }
 }
-    
-geraNovoConselho.addEventListener("click", () => {
+
+btnGeraNovoConselho.addEventListener("click", () => {
     geraConselho();
 });
 
